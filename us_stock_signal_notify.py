@@ -40,7 +40,7 @@ RSI_OVERBOUGHT   = 70
 BB_TOUCH_PCT     = 0.005
 MA_TOUCH_PCT     = 0.003
 MA_PERIODS       = [5, 20, 60, 120]
-FIBO_LEVELS      = [0.0, 0.236, 0.382, 0.5, 0.618, 0.786, 1.0]
+FIBO_LEVELS      = [0.0, 0.236, 0.382, 0.5]
 FIBO_TOUCH_PCT   = 0.005
 VIX_LEVELS       = [25, 30]
 
@@ -105,21 +105,46 @@ def is_touch(price: float, target: float, pct: float) -> bool:
 # ══════════════════════════════════════════════════════════════════
 
 def send_kakao(message: str) -> bool:
-    res = requests.post(
-        "https://kapi.kakao.com/v2/api/talk/memo/default/send",
-        headers={
-            "Authorization": f"Bearer {KAKAO_TOKEN}",
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-        data={"template_object": json.dumps({
-            "object_type": "text",
-            "text": message,
-            "link": {"web_url": "", "mobile_web_url": ""},
-        }, ensure_ascii=False)},
-        timeout=10
-    )
-    ok = res.status_code == 200
-    print(f"[KAKAO] {'전송 성공 ✓' if ok else f'실패: {res.text}'}")
+    """1000자 초과 시 자동 분할 전송"""
+    MAX_LEN = 900   # 여유있게 900자로 제한
+    chunks  = []
+    lines   = message.split("\n")
+    current = []
+    length  = 0
+
+    for line in lines:
+        if length + len(line) + 1 > MAX_LEN and current:
+            chunks.append("\n".join(current))
+            current = [line]
+            length  = len(line)
+        else:
+            current.append(line)
+            length += len(line) + 1
+    if current:
+        chunks.append("\n".join(current))
+
+    ok = True
+    for i, chunk in enumerate(chunks):
+        if len(chunks) > 1:
+            chunk = f"({i+1}/{len(chunks)})\n" + chunk
+        res = requests.post(
+            "https://kapi.kakao.com/v2/api/talk/memo/default/send",
+            headers={
+                "Authorization": f"Bearer {KAKAO_TOKEN}",
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            data={"template_object": json.dumps({
+                "object_type": "text",
+                "text": chunk,
+                "link": {"web_url": "", "mobile_web_url": ""},
+            }, ensure_ascii=False)},
+            timeout=10
+        )
+        if res.status_code != 200:
+            print(f"[KAKAO] 전송 실패 ({i+1}/{len(chunks)}): {res.text}")
+            ok = False
+        else:
+            print(f"[KAKAO] 전송 성공 ({i+1}/{len(chunks)}) ✓")
     return ok
 
 
@@ -333,7 +358,7 @@ def run_signal():
         "━━━━━━━━━━━━━━━━━━━",
         "\n\n".join(blocks),
         "━━━━━━━━━━━━━━━━━━━",
-        "쑤랑요니 다이야사줭💓",
+       "쑤랑요니 다이야사줭💓",
     ])
     print(msg)
     if send_kakao(msg) and not TEST_MODE:
