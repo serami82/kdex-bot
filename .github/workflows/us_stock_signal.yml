@@ -2,9 +2,17 @@ name: 미국주식 기술적 신호 알림
 
 on:
   schedule:
-    # 미국 장 시간 중 15분마다 실행 (한국시간 22:30~05:00, UTC 13:30~20:00)
     - cron: '0,15,30,45 13,14,15,16,17,18,19 * * 1-5'
-  workflow_dispatch:  # 수동 테스트 버튼
+  workflow_dispatch:
+    inputs:
+      test_mode:
+        description: '테스트 모드 (전 종목 현재 지표값 전송)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
 
 jobs:
   signal:
@@ -21,5 +29,6 @@ jobs:
 
       - name: 신호 알림 실행
         env:
-          KAKAO_TOKEN: ${{ secrets.KAKAO_TOKEN_FRIEND }}
+          KAKAO_TOKEN_FRIEND: ${{ secrets.KAKAO_TOKEN_FRIEND }}
+          TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
         run: python us_stock_signal_notify.py
