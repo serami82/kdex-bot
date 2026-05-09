@@ -134,25 +134,36 @@ def send_kakao(message: str) -> bool:
 
 def run():
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-    print(f"[RUN] {now}")
+    test_mode = os.getenv("TEST_MODE", "false").lower() == "true"
+    print(f"[RUN] {now} {'[테스트 모드]' if test_mode else ''}")
     all_signals = []
 
     for ticker in TICKERS:
         print(f"[분석] {ticker}...")
         try:
             signals = analyze(ticker)
+            if test_mode:
+                # 테스트 모드: 조건 미달성 종목도 현재 지표값 표시
+                if not signals:
+                    df = get_data(ticker, "1d")
+                    price = float(df["Close"].iloc[-1])
+                    rsi = float(ta.momentum.RSIIndicator(df["Close"], window=14).rsi().iloc[-1])
+                    signals = [f"[일봉] 현재가 ${price:,.2f} / RSI {rsi:.1f} (조건 미달성)"]
             if signals:
                 block = [f"📌 {ticker}"] + [f"  {s}" for s in signals]
                 all_signals.append("\n".join(block))
         except Exception as e:
             print(f"[ERROR] {ticker}: {e}")
+            if test_mode:
+                all_signals.append(f"📌 {ticker}\n  ❌ 오류: {e}")
 
     if not all_signals:
         print("[INFO] 조건 달성 종목 없음 — 알림 미전송")
         return
 
+    header = "🧪 [테스트] " if test_mode else ""
     msg = "\n".join([
-        "🇺🇸 [미국주식 기술적 신호]",
+        f"🇺🇸 {header}[미국주식 기술적 신호]",
         f"🕐 {now}",
         "━━━━━━━━━━━━━━━━━━━",
         "\n\n".join(all_signals),
