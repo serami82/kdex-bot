@@ -2,7 +2,9 @@ name: 미국주식 기술적 신호 알림
 
 on:
   schedule:
-    - cron: '0,15,30,45 13,14,15,16,17,18,19 * * 1-5'
+    # 프리장~나이트장 한국시간 22:00~08:00 (UTC 13:00~23:00)
+    # 15분마다 실행
+    - cron: '0,15,30,45 13,14,15,16,17,18,19,20,21,22,23 * * 0-5'
   workflow_dispatch:
     inputs:
       test_mode:
@@ -24,6 +26,14 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: 당일 발송 기록 캐시 복원
+        uses: actions/cache@v4
+        with:
+          path: sent_signals.json
+          key: sent-signals-${{ github.run_id }}
+          restore-keys: |
+            sent-signals-
+
       - name: 패키지 설치
         run: pip install yfinance pandas ta requests python-dotenv
 
@@ -32,3 +42,10 @@ jobs:
           KAKAO_TOKEN_FRIEND: ${{ secrets.KAKAO_TOKEN_FRIEND }}
           TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
         run: python us_stock_signal_notify.py
+
+      - name: 발송 기록 캐시 저장
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: sent_signals.json
+          key: sent-signals-${{ github.run_id }}
