@@ -17,7 +17,7 @@ jobs:
           python-version: '3.11'
 
       - name: 패키지 설치
-        run: pip install yfinance pandas pandas-ta requests python-dotenv
+        run: pip install yfinance pandas ta requests python-dotenv
 
       - name: 신호 알림 실행
         env:
