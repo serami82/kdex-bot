@@ -1,0 +1,24 @@
+name: KODEX200 매매 신호 알림
+
+on:
+  schedule:
+    - cron: '5 0 * * 1-5'   # 평일 한국시간 09:05 (UTC 00:05)
+  workflow_dispatch:          # 수동 테스트 버튼
+
+jobs:
+  signal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 패키지 설치
+        run: pip install yfinance requests python-dotenv
+
+      - name: 신호 알림 실행
+        env:
+          KAKAO_TOKEN: ${{ secrets.KAKAO_TOKEN }}
+        run: python kodex200_signal_notify.py
