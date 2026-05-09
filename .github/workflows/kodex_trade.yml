@@ -1,0 +1,32 @@
+name: KODEX200 자동매매 알림
+
+on:
+  schedule:
+    # 매일 한국시간 09:05 실행 (UTC 00:05)
+    - cron: '5 0 * * 1-5'   # 월~금만 실행
+  workflow_dispatch:          # 수동 실행 버튼 (테스트용)
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 패키지 설치
+        run: pip install requests pandas python-dotenv
+
+      - name: 자동매매 실행
+        env:
+          KIS_APP_KEY:    ${{ secrets.KIS_APP_KEY }}
+          KIS_APP_SECRET: ${{ secrets.KIS_APP_SECRET }}
+          KIS_ACCOUNT_NO: ${{ secrets.KIS_ACCOUNT_NO }}
+          KIS_IS_REAL:    ${{ secrets.KIS_IS_REAL }}
+          KAKAO_TOKEN:    ${{ secrets.KAKAO_TOKEN }}
+        run: python kodex200_kakao_notify.py
