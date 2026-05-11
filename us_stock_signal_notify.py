@@ -1,5 +1,5 @@
 """
-미국주식 알림 봇
+미국주식 알림 봇 (토큰 자동 갱신)
 ================
 [프리장 시작 - 매일 1회]
   - Fear & Greed Index
@@ -29,9 +29,12 @@ from pathlib import Path
 
 load_dotenv()
 
-KAKAO_TOKEN = os.getenv("KAKAO_TOKEN_FRIEND", "YOUR_KAKAO_TOKEN")
-TEST_MODE   = os.getenv("TEST_MODE", "false").lower() == "true"
-RUN_TYPE    = os.getenv("RUN_TYPE", "signal")   # signal | premarket
+KAKAO_TOKEN         = os.getenv("KAKAO_TOKEN_FRIEND", "")
+REFRESH_TOKEN       = os.getenv("REFRESH_TOKEN_FRIEND", "")
+KAKAO_CLIENT_ID     = "3f270568304f0fe40e51a777536559e9"
+KAKAO_CLIENT_SECRET = "8euPa0JN7Su2N7PQwFYCgWTd38VOyP6v"
+TEST_MODE           = os.getenv("TEST_MODE", "false").lower() == "true"
+RUN_TYPE            = os.getenv("RUN_TYPE", "signal")
 
 TICKERS = ["AVGO", "TSLA", "TEM", "OKLO", "SOXL", "TQQQ", "HOOD", "BMNR", "PLTR", "GOOGL"]
 
@@ -44,7 +47,71 @@ FIBO_LEVELS      = [0.0, 0.236, 0.382, 0.5]
 FIBO_TOUCH_PCT   = 0.005
 VIX_LEVELS       = [25, 30]
 
-SENT_FILE = Path("sent_signals.json")
+SENT_FILE  = Path("sent_signals.json")
+TOKEN_FILE = Path("kakao_token.json")
+
+
+# ══════════════════════════════════════════════════════════════════
+#  0. 카카오 토큰 자동 갱신
+# ══════════════════════════════════════════════════════════════════
+
+def load_token() -> str:
+    """저장된 토큰 로드. 만료 임박 시 자동 갱신."""
+    if TOKEN_FILE.exists():
+        try:
+            data     = json.loads(TOKEN_FILE.read_text())
+            issued   = datetime.datetime.fromisoformat(data["issued_at"])
+            expires  = issued + datetime.timedelta(seconds=data["expires_in"] - 300)
+            if datetime.datetime.now() < expires:
+                remain = int((expires - datetime.datetime.now()).seconds / 60)
+                print(f"[TOKEN] 기존 토큰 유효 (만료까지 {remain}분)")
+                return data["access_token"]
+            print("[TOKEN] 토큰 만료 임박 → 자동 갱신")
+            return refresh_access_token(data["refresh_token"])
+        except Exception as e:
+            print(f"[TOKEN] 파일 로드 실패: {e}")
+
+    if KAKAO_TOKEN:
+        print("[TOKEN] 환경변수 토큰 사용 → 파일 저장")
+        save_token(KAKAO_TOKEN, REFRESH_TOKEN, 21599)
+        return KAKAO_TOKEN
+
+    raise ValueError("카카오 토큰 없음 — KAKAO_TOKEN_FRIEND Secret 확인 필요")
+
+
+def refresh_access_token(refresh_token: str) -> str:
+    """refresh_token으로 새 access_token 발급"""
+    res = requests.post(
+        "https://kauth.kakao.com/oauth/token",
+        headers={"Content-Type": "application/x-www-form-urlencoded"},
+        data={
+            "grant_type":    "refresh_token",
+            "client_id":     KAKAO_CLIENT_ID,
+            "client_secret": KAKAO_CLIENT_SECRET,
+            "refresh_token": refresh_token,
+        },
+        timeout=10
+    )
+    res.raise_for_status()
+    data = res.json()
+    if "error" in data:
+        raise ValueError(f"토큰 갱신 실패: {data}")
+
+    new_access  = data["access_token"]
+    new_refresh = data.get("refresh_token", refresh_token)
+    expires_in  = data.get("expires_in", 21599)
+    save_token(new_access, new_refresh, expires_in)
+    print(f"[TOKEN] 갱신 완료 ✓")
+    return new_access
+
+
+def save_token(access: str, refresh: str, expires_in: int):
+    TOKEN_FILE.write_text(json.dumps({
+        "access_token":  access,
+        "refresh_token": refresh,
+        "expires_in":    expires_in,
+        "issued_at":     datetime.datetime.now().isoformat(),
+    }, ensure_ascii=False))
 
 
 # ══════════════════════════════════════════════════════════════════
@@ -68,7 +135,6 @@ def save_sent(data: dict):
 
 
 def is_new(sent_data: dict, key: str) -> bool:
-    """당일 미발송 신호이면 True"""
     return TEST_MODE or key not in sent_data["signals"]
 
 
@@ -101,12 +167,18 @@ def is_touch(price: float, target: float, pct: float) -> bool:
 
 
 # ══════════════════════════════════════════════════════════════════
-#  4. 카카오톡 전송
+#  4. 카카오톡 전송 (자동 갱신 + 분할 전송)
 # ══════════════════════════════════════════════════════════════════
 
 def send_kakao(message: str) -> bool:
-    """1000자 초과 시 자동 분할 전송"""
-    MAX_LEN = 900   # 여유있게 900자로 제한
+    """토큰 자동 갱신 + 900자 초과 시 분할 전송"""
+    try:
+        token = load_token()
+    except Exception as e:
+        print(f"[TOKEN] 토큰 로드 실패: {e}")
+        return False
+
+    MAX_LEN = 900
     chunks  = []
     lines   = message.split("\n")
     current = []
@@ -130,7 +202,7 @@ def send_kakao(message: str) -> bool:
         res = requests.post(
             "https://kapi.kakao.com/v2/api/talk/memo/default/send",
             headers={
-                "Authorization": f"Bearer {KAKAO_TOKEN}",
+                "Authorization": f"Bearer {token}",
                 "Content-Type": "application/x-www-form-urlencoded",
             },
             data={"template_object": json.dumps({
@@ -154,10 +226,10 @@ def send_kakao(message: str) -> bool:
 
 def get_fear_greed_msg() -> str:
     try:
-        data    = fear_greed.get()
-        score   = data["score"]
-        rating  = data["rating"]
-        history = data.get("history", {})
+        data      = fear_greed.get()
+        score     = data["score"]
+        rating    = data["rating"]
+        history   = data.get("history", {})
 
         if score <= 25:   emoji = "😱"
         elif score <= 45: emoji = "😰"
@@ -201,7 +273,6 @@ def calc_fibonacci(ticker: str) -> str:
 
 
 def run_premarket():
-    """프리장 시작 시 1회: Fear & Greed + 피보나치"""
     now       = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     sent_data = load_sent()
 
@@ -235,7 +306,6 @@ def run_premarket():
 # ══════════════════════════════════════════════════════════════════
 
 def check_vix(sent_data: dict) -> list:
-    """VIX 25/30 돌파 체크"""
     results = []
     try:
         df = get_ohlcv("^VIX", period="5d")
@@ -246,12 +316,10 @@ def check_vix(sent_data: dict) -> list:
         print(f"[VIX] 현재 {vix:.2f}  전일 {prev_vix:.2f}")
 
         for lv in VIX_LEVELS:
-            # 상향 돌파
             if prev_vix < lv <= vix:
                 key = f"VIX_{lv}_up"
                 if is_new(sent_data, key):
                     results.append((key, f"⚠️ VIX {vix:.1f} — {lv} 상향 돌파! 변동성 급등 🔴"))
-            # 하향 돌파
             elif prev_vix >= lv > vix:
                 key = f"VIX_{lv}_down"
                 if is_new(sent_data, key):
@@ -262,7 +330,6 @@ def check_vix(sent_data: dict) -> list:
 
 
 def check_ticker(ticker: str, sent_data: dict) -> list:
-    """종목별 신호 체크 (RSI / BB / MA / MACD)"""
     results = []
     try:
         df    = get_ohlcv(ticker)
@@ -275,14 +342,14 @@ def check_ticker(ticker: str, sent_data: dict) -> list:
             if is_new(sent_data, key):
                 results.append((key, msg))
 
-        # 1. RSI
+        # RSI
         rsi = float(ta.momentum.RSIIndicator(df["Close"], window=14).rsi().iloc[-1])
         if rsi <= RSI_OVERSOLD:
             chk("RSI_과매도", f"RSI {rsi:.1f} ← 과매도 ({RSI_OVERSOLD} 이하) 🟢")
         elif rsi >= RSI_OVERBOUGHT:
             chk("RSI_과매수", f"RSI {rsi:.1f} ← 과매수 ({RSI_OVERBOUGHT} 이상) 🔴")
 
-        # 2. 볼린저밴드
+        # 볼린저밴드
         bb    = ta.volatility.BollingerBands(df["Close"], window=20, window_dev=2)
         upper = float(bb.bollinger_hband().iloc[-1])
         mid   = float(bb.bollinger_mavg().iloc[-1])
@@ -294,14 +361,14 @@ def check_ticker(ticker: str, sent_data: dict) -> list:
         elif is_touch(price, mid, BB_TOUCH_PCT):
             chk("BB_중심", f"볼린저밴드 중심선 터치 (${mid:,.2f}) 🟡")
 
-        # 3. 이동평균선
+        # 이동평균선
         for p in MA_PERIODS:
             if len(df) >= p:
                 ma_val = float(df["Close"].rolling(p).mean().iloc[-1])
                 if is_touch(price, ma_val, MA_TOUCH_PCT):
                     chk(f"MA_{p}", f"{p}일선 터치 (${ma_val:,.2f})")
 
-        # 4. MACD 시그널선 돌파
+        # MACD
         macd_ind = ta.trend.MACD(df["Close"])
         macd_l   = macd_ind.macd()
         macd_s   = macd_ind.macd_signal()
@@ -315,31 +382,27 @@ def check_ticker(ticker: str, sent_data: dict) -> list:
 
     except Exception as e:
         print(f"[ERROR] {ticker}: {e}")
-
     return results
 
 
 def run_signal():
-    """장중 15분마다: 조건 달성 시 당일 1회"""
     now       = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     sent_data = load_sent()
     blocks    = []
     new_keys  = []
 
-    # VIX
     vix_signals = check_vix(sent_data)
     if vix_signals:
         msgs = [m for _, m in vix_signals]
         blocks.append("📊 VIX\n" + "\n".join(f"  {m}" for m in msgs))
         new_keys += [k for k, _ in vix_signals]
 
-    # 종목별
     for ticker in TICKERS:
         print(f"[분석] {ticker}...")
         signals = check_ticker(ticker, sent_data)
         if signals:
             try:
-                price = float(get_ohlcv(ticker)["Close"].iloc[-1])
+                price  = float(get_ohlcv(ticker)["Close"].iloc[-1])
                 header = f"📌 {ticker}  ${price:,.2f}"
             except Exception:
                 header = f"📌 {ticker}"
@@ -358,7 +421,7 @@ def run_signal():
         "━━━━━━━━━━━━━━━━━━━",
         "\n\n".join(blocks),
         "━━━━━━━━━━━━━━━━━━━",
-       "쑤랑요니 다이야사줭💓",
+        "※화이팅범!쑤랑요니 다이야사줭💓",
     ])
     print(msg)
     if send_kakao(msg) and not TEST_MODE:
