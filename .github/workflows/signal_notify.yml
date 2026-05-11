@@ -2,8 +2,8 @@ name: KODEX200 매매 신호 알림
 
 on:
   schedule:
-    - cron: '30 0 * * 1-5'  # 평일 한국시간 09:30 (UTC 00:30)
-  workflow_dispatch:          # 수동 테스트 버튼
+    - cron: '30 0 * * 1-5'   # 평일 한국시간 09:30 (UTC 00:30)
+  workflow_dispatch:
 
 jobs:
   signal:
@@ -15,10 +15,26 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: 토큰 캐시 복원
+        uses: actions/cache@v4
+        with:
+          path: kakao_token_my.json
+          key: kakao-token-my-${{ github.run_id }}
+          restore-keys: |
+            kakao-token-my-
+
       - name: 패키지 설치
         run: pip install yfinance requests python-dotenv
 
       - name: 신호 알림 실행
         env:
-          KAKAO_TOKEN: ${{ secrets.KAKAO_TOKEN }}
+          KAKAO_TOKEN:   ${{ secrets.KAKAO_TOKEN }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
         run: python kodex200_signal_notify.py
+
+      - name: 토큰 캐시 저장
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: kakao_token_my.json
+          key: kakao-token-my-${{ github.run_id }}
