@@ -32,27 +32,32 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 당일 발송 기록 캐시 복원
+      - name: 토큰 및 발송 기록 캐시 복원
         uses: actions/cache@v4
         with:
-          path: sent_signals.json
-          key: sent-signals-${{ github.run_id }}
+          path: |
+            sent_signals.json
+            kakao_token.json
+          key: kakao-cache-${{ github.run_id }}
           restore-keys: |
-            sent-signals-
+            kakao-cache-
 
       - name: 패키지 설치
         run: pip install yfinance pandas ta requests python-dotenv fear-greed
 
       - name: 알림 실행
         env:
-          KAKAO_TOKEN_FRIEND: ${{ secrets.KAKAO_TOKEN_FRIEND }}
+          KAKAO_TOKEN_FRIEND:   ${{ secrets.KAKAO_TOKEN_FRIEND }}
+          REFRESH_TOKEN_FRIEND: ${{ secrets.REFRESH_TOKEN_FRIEND }}
           TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
           RUN_TYPE: ${{ github.event.inputs.run_type || (github.event.schedule == '0 13 * * 1-5' && 'premarket' || 'signal') }}
         run: python us_stock_signal_notify.py
 
-      - name: 발송 기록 캐시 저장
+      - name: 캐시 저장
         uses: actions/cache/save@v4
         if: always()
         with:
-          path: sent_signals.json
-          key: sent-signals-${{ github.run_id }}
+          path: |
+            sent_signals.json
+            kakao_token.json
+          key: kakao-cache-${{ github.run_id }}
