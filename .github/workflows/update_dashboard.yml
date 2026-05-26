@@ -1,0 +1,35 @@
+name: 대시보드 데이터 업데이트
+
+on:
+  schedule:
+    # 미국 장 시간 중 30분마다 (UTC 14:00~21:00, 한국시간 23:00~06:00)
+    - cron: '0,30 14,15,16,17,18,19,20 * * 1-5'
+    # 프리장 (UTC 13:00, 한국시간 22:00)
+    - cron: '0 13 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 패키지 설치
+        run: pip install yfinance pandas ta requests fear-greed
+
+      - name: 데이터 생성
+        run: python generate_data.py
+
+      - name: data.json 커밋 & 푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --staged --quiet || git commit -m "📊 데이터 업데이트 $(date +'%Y-%m-%d %H:%M')"
+          git push
