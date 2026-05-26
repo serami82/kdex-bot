@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-05-26 14:29",
+  "updated_at": "2026-05-26 17:22",
   "tickers": [
     {
       "ticker": "AVGO",
-      "price": 433.68,
-      "rsi": 60.7,
+      "price": 422.48,
+      "rsi": 56.6,
       "signals": [],
       "fibonacci": [
         {
@@ -33,8 +33,8 @@
     },
     {
       "ticker": "TSLA",
-      "price": 426.86,
-      "rsi": 58.6,
+      "price": 433.29,
+      "rsi": 60.8,
       "signals": [],
       "fibonacci": [
         {
@@ -63,8 +63,8 @@
     },
     {
       "ticker": "TEM",
-      "price": 47.37,
-      "rsi": 46.4,
+      "price": 47.74,
+      "rsi": 47.5,
       "signals": [],
       "fibonacci": [
         {
@@ -93,8 +93,8 @@
     },
     {
       "ticker": "OKLO",
-      "price": 69.81,
-      "rsi": 53.7,
+      "price": 70.4,
+      "rsi": 54.2,
       "signals": [],
       "fibonacci": [
         {
@@ -123,12 +123,12 @@
     },
     {
       "ticker": "SOXL",
-      "price": 222.94,
-      "rsi": 73.4,
+      "price": 220.42,
+      "rsi": 73.0,
       "signals": [
         {
           "type": "RSI",
-          "msg": "RSI 73.4 과매수",
+          "msg": "RSI 73.0 과매수",
           "color": "red"
         },
         {
@@ -140,68 +140,68 @@
       "fibonacci": [
         {
           "level": 0.0,
-          "price": 224.2,
+          "price": 226.89,
           "near": false
         },
         {
           "level": 0.236,
-          "price": 174.87,
+          "price": 176.93,
           "near": false
         },
         {
           "level": 0.382,
-          "price": 144.36,
+          "price": 146.02,
           "near": false
         },
         {
           "level": 0.5,
-          "price": 119.69,
+          "price": 121.04,
           "near": false
         }
       ],
-      "fib_high": 224.2,
+      "fib_high": 226.89,
       "fib_low": 15.19
     },
     {
       "ticker": "TQQQ",
-      "price": 81.81,
-      "rsi": 74.4,
+      "price": 81.15,
+      "rsi": 73.7,
       "signals": [
         {
           "type": "RSI",
-          "msg": "RSI 74.4 과매수",
+          "msg": "RSI 73.7 과매수",
           "color": "red"
         }
       ],
       "fibonacci": [
         {
           "level": 0.0,
-          "price": 81.99,
-          "near": true
+          "price": 82.27,
+          "near": false
         },
         {
           "level": 0.236,
-          "price": 70.5,
+          "price": 70.71,
           "near": false
         },
         {
           "level": 0.382,
-          "price": 63.38,
+          "price": 63.56,
           "near": false
         },
         {
           "level": 0.5,
-          "price": 57.64,
+          "price": 57.78,
           "near": false
         }
       ],
-      "fib_high": 81.99,
+      "fib_high": 82.27,
       "fib_low": 33.29
     },
     {
       "ticker": "HOOD",
-      "price": 74.35,
-      "rsi": 45.1,
+      "price": 74.06,
+      "rsi": 44.6,
       "signals": [],
       "fibonacci": [
         {
@@ -230,8 +230,8 @@
     },
     {
       "ticker": "BMNR",
-      "price": 19.9,
-      "rsi": 45.2,
+      "price": 19.42,
+      "rsi": 42.5,
       "signals": [],
       "fibonacci": [
         {
@@ -260,9 +260,20 @@
     },
     {
       "ticker": "PLTR",
-      "price": 135.31,
-      "rsi": 45.2,
-      "signals": [],
+      "price": 137.49,
+      "rsi": 48.5,
+      "signals": [
+        {
+          "type": "BB",
+          "msg": "BB중심 $137.14",
+          "color": "yellow"
+        },
+        {
+          "type": "MA",
+          "msg": "20일선 $137.14",
+          "color": "pink"
+        }
+      ],
       "fibonacci": [
         {
           "level": 0.0,
@@ -290,22 +301,22 @@
     },
     {
       "ticker": "GOOGL",
-      "price": 386.93,
-      "rsi": 59.9,
+      "price": 386.42,
+      "rsi": 59.6,
       "signals": [
         {
           "type": "BB",
-          "msg": "BB중심 $387.31",
+          "msg": "BB중심 $387.29",
           "color": "yellow"
         },
         {
           "type": "MA",
-          "msg": "5일선 $386.83",
+          "msg": "5일선 $386.72",
           "color": "pink"
         },
         {
           "type": "MA",
-          "msg": "20일선 $387.31",
+          "msg": "20일선 $387.29",
           "color": "pink"
         }
       ],
@@ -336,12 +347,12 @@
     }
   ],
   "vix": {
-    "vix": 16.87,
+    "vix": 17.11,
     "prev": 16.59,
-    "change": 0.28
+    "change": 0.52
   },
   "fear_greed": {
-    "score": 61,
+    "score": 60,
     "rating": "greed",
     "rating_kr": "탐욕"
   }
