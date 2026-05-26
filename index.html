@@ -226,18 +226,20 @@ function fiboHTML(t) {
 
 // ── 티커 검색 ──────────────────────────────────────────────────
 async function fetchYahoo(symbol, interval='1d', range='1y') {
-  const urls = [
-    `https://query2.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=${interval}&range=${range}`,
-    `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=${interval}&range=${range}&corsDomain=finance.yahoo.com`
+  const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=${interval}&range=${range}&corsDomain=finance.yahoo.com`;
+  const proxies = [
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(yahooUrl)}`,
+    `https://corsproxy.io/?${encodeURIComponent(yahooUrl)}`,
+    yahooUrl,
   ];
-  for (const url of urls) {
+  for (const url of proxies) {
     try {
       const res = await fetch(url);
       const data = await res.json();
       if (data.chart?.result?.[0]) return data.chart.result[0];
     } catch(e) {}
   }
-  throw new Error('데이터 없음');
+  throw new Error(`${symbol} 데이터 없음`);
 }
 
 function calcMA(c,p){if(!c||c.length<p)return null;return c.slice(-p).reduce((a,b)=>a+b,0)/p;}
