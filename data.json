@@ -1,0 +1,321 @@
+{
+  "updated_at": "2026-05-26 13:19",
+  "tickers": [
+    {
+      "ticker": "AVGO",
+      "price": 414.14,
+      "rsi": 53.1,
+      "signals": [],
+      "fibonacci": [
+        {
+          "level": 0.0,
+          "price": 442.36,
+          "near": false
+        },
+        {
+          "level": 0.236,
+          "price": 390.91,
+          "near": false
+        },
+        {
+          "level": 0.382,
+          "price": 359.08,
+          "near": false
+        },
+        {
+          "level": 0.5,
+          "price": 333.36,
+          "near": false
+        }
+      ],
+      "fib_high": 442.36,
+      "fib_low": 224.36
+    },
+    {
+      "ticker": "TSLA",
+      "price": 426.01,
+      "rsi": 58.3,
+      "signals": [],
+      "fibonacci": [
+        {
+          "level": 0.0,
+          "price": 498.83,
+          "near": false
+        },
+        {
+          "level": 0.236,
+          "price": 445.58,
+          "near": false
+        },
+        {
+          "level": 0.382,
+          "price": 412.64,
+          "near": false
+        },
+        {
+          "level": 0.5,
+          "price": 386.02,
+          "near": false
+        }
+      ],
+      "fib_high": 498.83,
+      "fib_low": 273.21
+    },
+    {
+      "ticker": "TEM",
+      "price": 46.18,
+      "rsi": 42.6,
+      "signals": [],
+      "fibonacci": [
+        {
+          "level": 0.0,
+          "price": 104.32,
+          "near": false
+        },
+        {
+          "level": 0.236,
+          "price": 89.55,
+          "near": false
+        },
+        {
+          "level": 0.382,
+          "price": 80.41,
+          "near": false
+        },
+        {
+          "level": 0.5,
+          "price": 73.02,
+          "near": false
+        }
+      ],
+      "fib_high": 104.32,
+      "fib_low": 41.73
+    },
+    {
+      "ticker": "OKLO",
+      "price": 65.88,
+      "rsi": 50.1,
+      "signals": [],
+      "fibonacci": [
+        {
+          "level": 0.0,
+          "price": 193.84,
+          "near": false
+        },
+        {
+          "level": 0.236,
+          "price": 158.39,
+          "near": false
+        },
+        {
+          "level": 0.382,
+          "price": 136.46,
+          "near": false
+        },
+        {
+          "level": 0.5,
+          "price": 118.73,
+          "near": false
+        }
+      ],
+      "fib_high": 193.84,
+      "fib_low": 43.63
+    },
+    {
+      "ticker": "SOXL",
+      "price": 190.56,
+      "rsi": 67.0,
+      "signals": [],
+      "fibonacci": [
+        {
+          "level": 0.0,
+          "price": 195.27,
+          "near": false
+        },
+        {
+          "level": 0.236,
+          "price": 152.74,
+          "near": false
+        },
+        {
+          "level": 0.382,
+          "price": 126.43,
+          "near": false
+        },
+        {
+          "level": 0.5,
+          "price": 105.16,
+          "near": false
+        }
+      ],
+      "fib_high": 195.27,
+      "fib_low": 15.05
+    },
+    {
+      "ticker": "TQQQ",
+      "price": 77.84,
+      "rsi": 70.0,
+      "signals": [],
+      "fibonacci": [
+        {
+          "level": 0.0,
+          "price": 79.68,
+          "near": false
+        },
+        {
+          "level": 0.236,
+          "price": 68.48,
+          "near": false
+        },
+        {
+          "level": 0.382,
+          "price": 61.54,
+          "near": false
+        },
+        {
+          "level": 0.5,
+          "price": 55.94,
+          "near": false
+        }
+      ],
+      "fib_high": 79.68,
+      "fib_low": 32.2
+    },
+    {
+      "ticker": "HOOD",
+      "price": 73.64,
+      "rsi": 43.8,
+      "signals": [],
+      "fibonacci": [
+        {
+          "level": 0.0,
+          "price": 153.86,
+          "near": false
+        },
+        {
+          "level": 0.236,
+          "price": 132.33,
+          "near": false
+        },
+        {
+          "level": 0.382,
+          "price": 119.01,
+          "near": false
+        },
+        {
+          "level": 0.5,
+          "price": 108.25,
+          "near": false
+        }
+      ],
+      "fib_high": 153.86,
+      "fib_low": 62.63
+    },
+    {
+      "ticker": "BMNR",
+      "price": 18.88,
+      "rsi": 39.2,
+      "signals": [],
+      "fibonacci": [
+        {
+          "level": 0.0,
+          "price": 160.95,
+          "near": false
+        },
+        {
+          "level": 0.236,
+          "price": 123.89,
+          "near": false
+        },
+        {
+          "level": 0.382,
+          "price": 100.97,
+          "near": false
+        },
+        {
+          "level": 0.5,
+          "price": 82.44,
+          "near": false
+        }
+      ],
+      "fib_high": 160.95,
+      "fib_low": 3.92
+    },
+    {
+      "ticker": "PLTR",
+      "price": 136.88,
+      "rsi": 47.5,
+      "signals": [
+        {
+          "type": "BB",
+          "msg": "BB중심 $137.43",
+          "color": "yellow"
+        }
+      ],
+      "fibonacci": [
+        {
+          "level": 0.0,
+          "price": 207.52,
+          "near": false
+        },
+        {
+          "level": 0.236,
+          "price": 186.61,
+          "near": false
+        },
+        {
+          "level": 0.382,
+          "price": 173.68,
+          "near": false
+        },
+        {
+          "level": 0.5,
+          "price": 163.23,
+          "near": false
+        }
+      ],
+      "fib_high": 207.52,
+      "fib_low": 118.93
+    },
+    {
+      "ticker": "GOOGL",
+      "price": 382.97,
+      "rsi": 57.5,
+      "signals": [],
+      "fibonacci": [
+        {
+          "level": 0.0,
+          "price": 408.61,
+          "near": false
+        },
+        {
+          "level": 0.236,
+          "price": 350.32,
+          "near": false
+        },
+        {
+          "level": 0.382,
+          "price": 314.27,
+          "near": false
+        },
+        {
+          "level": 0.5,
+          "price": 285.12,
+          "near": false
+        }
+      ],
+      "fib_high": 408.61,
+      "fib_low": 161.64
+    }
+  ],
+  "vix": {
+    "vix": 16.77,
+    "prev": 16.59,
+    "change": 0.18
+  },
+  "fear_greed": {
+    "score": 59,
+    "rating": "greed",
+    "rating_kr": "탐욕"
+  }
+}
