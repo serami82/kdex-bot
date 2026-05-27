@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-27 11:53",
+  "updated_at": "2026-05-27 12:01",
   "tickers": [
     {
       "ticker": "AVGO",
@@ -199,34 +199,40 @@
       "fib_low": 33.29
     },
     {
-      "ticker": "HOOD",
-      "price": 74.09,
-      "rsi": 44.7,
-      "signals": [],
+      "ticker": "QCOM",
+      "price": 248.82,
+      "rsi": 74.1,
+      "signals": [
+        {
+          "type": "RSI",
+          "msg": "RSI 74.1 과매수",
+          "color": "red"
+        }
+      ],
       "fibonacci": [
         {
           "level": 0.0,
-          "price": 153.86,
+          "price": 258.0,
           "near": false
         },
         {
           "level": 0.236,
-          "price": 132.4,
+          "price": 225.9,
           "near": false
         },
         {
           "level": 0.382,
-          "price": 119.12,
+          "price": 206.04,
           "near": false
         },
         {
           "level": 0.5,
-          "price": 108.39,
+          "price": 189.99,
           "near": false
         }
       ],
-      "fib_high": 153.86,
-      "fib_low": 62.92
+      "fib_high": 258.0,
+      "fib_low": 121.99
     },
     {
       "ticker": "BMNR",
@@ -337,9 +343,9 @@
     }
   ],
   "vix": {
-    "vix": 16.86,
+    "vix": 16.87,
     "prev": 17.01,
-    "change": -0.15
+    "change": -0.14
   },
   "fear_greed": {
     "score": 61,
