@@ -9,7 +9,7 @@ import ta
 import fear_greed
 from pathlib import Path
 
-TICKERS = ["AVGO","TSLA","TEM","OKLO","SOXL","TQQQ","HOOD","BMNR","PLTR","GOOGL"]
+TICKERS = ["AVGO","TSLA","TEM","OKLO","SOXL","TQQQ","QCOM","BMNR","PLTR","GOOGL"]
 MA_PERIODS = [5, 20, 60, 120]
 FIBO_LEVELS = [0.0, 0.236, 0.382, 0.5]
 
