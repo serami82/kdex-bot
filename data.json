@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-26 21:29",
+  "updated_at": "2026-05-27 11:53",
   "tickers": [
     {
       "ticker": "AVGO",
@@ -337,9 +337,9 @@
     }
   ],
   "vix": {
-    "vix": 17.01,
-    "prev": 16.59,
-    "change": 0.42
+    "vix": 16.86,
+    "prev": 17.01,
+    "change": -0.15
   },
   "fear_greed": {
     "score": 61,
