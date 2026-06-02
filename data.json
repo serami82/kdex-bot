@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-06-02 18:01",
+  "updated_at": "2026-06-02 21:28",
   "tickers": [
     {
       "ticker": "AVGO",
-      "price": 475.61,
-      "rsi": 73.5,
+      "price": 481.57,
+      "rsi": 74.8,
       "signals": [
         {
           "type": "RSI",
-          "msg": "RSI 73.5 과매수",
+          "msg": "RSI 74.8 과매수",
           "color": "red"
         }
       ],
@@ -39,13 +39,18 @@
     },
     {
       "ticker": "TSLA",
-      "price": 422.84,
-      "rsi": 53.2,
+      "price": 423.74,
+      "rsi": 53.6,
       "signals": [
         {
           "type": "BB",
-          "msg": "BB중심 $424.16",
+          "msg": "BB중심 $424.21",
           "color": "yellow"
+        },
+        {
+          "type": "MA",
+          "msg": "20일선 $424.21",
+          "color": "pink"
         }
       ],
       "fibonacci": [
@@ -75,8 +80,8 @@
     },
     {
       "ticker": "TEM",
-      "price": 49.88,
-      "rsi": 51.9,
+      "price": 49.62,
+      "rsi": 51.3,
       "signals": [],
       "fibonacci": [
         {
@@ -105,8 +110,8 @@
     },
     {
       "ticker": "OKLO",
-      "price": 71.95,
-      "rsi": 56.5,
+      "price": 73.47,
+      "rsi": 57.9,
       "signals": [
         {
           "type": "MACD",
@@ -141,80 +146,80 @@
     },
     {
       "ticker": "SOXL",
-      "price": 257.1,
-      "rsi": 77.2,
+      "price": 266.32,
+      "rsi": 78.4,
       "signals": [
         {
           "type": "RSI",
-          "msg": "RSI 77.2 과매수",
+          "msg": "RSI 78.4 과매수",
           "color": "red"
         }
       ],
       "fibonacci": [
         {
           "level": 0.0,
-          "price": 261.92,
-          "near": false
+          "price": 267.08,
+          "near": true
         },
         {
           "level": 0.236,
-          "price": 203.88,
+          "price": 207.95,
           "near": false
         },
         {
           "level": 0.382,
-          "price": 167.97,
+          "price": 171.37,
           "near": false
         },
         {
           "level": 0.5,
-          "price": 138.95,
+          "price": 141.8,
           "near": false
         }
       ],
-      "fib_high": 261.92,
-      "fib_low": 15.98
+      "fib_high": 267.08,
+      "fib_low": 16.52
     },
     {
       "ticker": "TQQQ",
-      "price": 86.54,
-      "rsi": 78.5,
+      "price": 87.22,
+      "rsi": 79.1,
       "signals": [
         {
           "type": "RSI",
-          "msg": "RSI 78.5 과매수",
+          "msg": "RSI 79.1 과매수",
           "color": "red"
         }
       ],
       "fibonacci": [
         {
           "level": 0.0,
-          "price": 87.25,
-          "near": false
+          "price": 87.32,
+          "near": true
         },
         {
           "level": 0.236,
-          "price": 74.71,
+          "price": 75.07,
           "near": false
         },
         {
           "level": 0.382,
-          "price": 66.95,
+          "price": 67.49,
           "near": false
         },
         {
           "level": 0.5,
-          "price": 60.68,
+          "price": 61.36,
           "near": false
         }
       ],
-      "fib_high": 87.25,
-      "fib_low": 34.11
+      "fib_high": 87.32,
+      "fib_low": 35.4
     },
     {
       "ticker": "QCOM",
-      "price": 240.2,
-      "rsi": 62.5,
+      "price": 240.84,
+      "rsi": 62.7,
       "signals": [],
       "fibonacci": [
         {
@@ -243,8 +248,8 @@
     },
     {
       "ticker": "BMNR",
-      "price": 17.77,
-      "rsi": 35.4,
+      "price": 17.97,
+      "rsi": 36.2,
       "signals": [],
       "fibonacci": [
         {
@@ -273,8 +278,8 @@
     },
     {
       "ticker": "PLTR",
-      "price": 152.42,
-      "rsi": 59.9,
+      "price": 152.17,
+      "rsi": 59.6,
       "signals": [],
       "fibonacci": [
         {
@@ -303,8 +308,8 @@
     },
     {
       "ticker": "GOOGL",
-      "price": 366.83,
-      "rsi": 43.2,
+      "price": 361.85,
+      "rsi": 40.4,
       "signals": [],
       "fibonacci": [
         {
@@ -333,9 +338,9 @@
     }
   ],
   "vix": {
-    "vix": 15.99,
+    "vix": 15.77,
     "prev": 16.05,
-    "change": -0.06
+    "change": -0.28
   },
   "fear_greed": {
     "score": 57,
