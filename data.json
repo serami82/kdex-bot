@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-11 20:12",
+  "updated_at": "2026-06-11 22:21",
   "tickers": [
     {
       "ticker": "AVGO",
@@ -99,7 +99,7 @@
     },
     {
       "ticker": "OKLO",
-      "price": 57.85,
+      "price": 57.86,
       "rsi": 43.3,
       "signals": [],
       "fibonacci": [
@@ -129,7 +129,7 @@
     },
     {
       "ticker": "SOXL",
-      "price": 224.0,
+      "price": 223.99,
       "rsi": 56.1,
       "signals": [],
       "fibonacci": [
@@ -309,9 +309,9 @@
     }
   ],
   "vix": {
-    "vix": 19.48,
+    "vix": 19.44,
     "prev": 22.22,
-    "change": -2.74
+    "change": -2.78
   },
   "fear_greed": {
     "score": 30,
