@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-06-15 18:22",
+  "updated_at": "2026-06-15 21:29",
   "tickers": [
     {
       "ticker": "AVGO",
-      "price": 394.73,
-      "rsi": 45.5,
+      "price": 393.94,
+      "rsi": 45.3,
       "signals": [],
       "fibonacci": [
         {
@@ -33,15 +33,9 @@
     },
     {
       "ticker": "TSLA",
-      "price": 410.26,
-      "rsi": 50.2,
-      "signals": [
-        {
-          "type": "MA",
-          "msg": "120일선 $409.45",
-          "color": "pink"
-        }
-      ],
+      "price": 411.15,
+      "rsi": 50.6,
+      "signals": [],
       "fibonacci": [
         {
           "level": 0.0,
@@ -69,8 +63,8 @@
     },
     {
       "ticker": "TEM",
-      "price": 51.76,
-      "rsi": 55.2,
+      "price": 52.32,
+      "rsi": 56.1,
       "signals": [],
       "fibonacci": [
         {
@@ -99,8 +93,8 @@
     },
     {
       "ticker": "OKLO",
-      "price": 60.88,
-      "rsi": 47.3,
+      "price": 60.74,
+      "rsi": 47.2,
       "signals": [],
       "fibonacci": [
         {
@@ -129,7 +123,7 @@
     },
     {
       "ticker": "SOXL",
-      "price": 272.95,
+      "price": 272.5,
       "rsi": 63.4,
       "signals": [],
       "fibonacci": [
@@ -159,7 +153,7 @@
     },
     {
       "ticker": "TQQQ",
-      "price": 84.63,
+      "price": 84.59,
       "rsi": 60.7,
       "signals": [],
       "fibonacci": [
@@ -189,15 +183,9 @@
     },
     {
       "ticker": "QCOM",
-      "price": 221.38,
-      "rsi": 53.9,
-      "signals": [
-        {
-          "type": "BB",
-          "msg": "BB중심 $222.43",
-          "color": "yellow"
-        }
-      ],
+      "price": 220.81,
+      "rsi": 53.7,
+      "signals": [],
       "fibonacci": [
         {
           "level": 0.0,
@@ -225,8 +213,8 @@
     },
     {
       "ticker": "BMNR",
-      "price": 17.37,
-      "rsi": 44.8,
+      "price": 17.11,
+      "rsi": 43.4,
       "signals": [],
       "fibonacci": [
         {
@@ -255,8 +243,8 @@
     },
     {
       "ticker": "PLTR",
-      "price": 133.78,
-      "rsi": 45.8,
+      "price": 134.71,
+      "rsi": 46.7,
       "signals": [],
       "fibonacci": [
         {
@@ -285,8 +273,8 @@
     },
     {
       "ticker": "GOOGL",
-      "price": 371.41,
-      "rsi": 51.3,
+      "price": 369.35,
+      "rsi": 49.9,
       "signals": [],
       "fibonacci": [
         {
@@ -315,9 +303,9 @@
     }
   ],
   "vix": {
-    "vix": 16.23,
+    "vix": 16.2,
     "prev": 17.68,
-    "change": -1.45
+    "change": -1.48
   },
   "fear_greed": {
     "score": 41,
