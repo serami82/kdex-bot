@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-06-18 16:52",
+  "updated_at": "2026-06-18 19:22",
   "tickers": [
     {
       "ticker": "AVGO",
-      "price": 408.46,
-      "rsi": 50.6,
+      "price": 409.28,
+      "rsi": 50.8,
       "signals": [],
       "fibonacci": [
         {
@@ -33,9 +33,15 @@
     },
     {
       "ticker": "TSLA",
-      "price": 393.31,
-      "rsi": 44.3,
-      "signals": [],
+      "price": 395.37,
+      "rsi": 45.0,
+      "signals": [
+        {
+          "type": "MA",
+          "msg": "60일선 $395.85",
+          "color": "pink"
+        }
+      ],
       "fibonacci": [
         {
           "level": 0.0,
@@ -63,8 +69,8 @@
     },
     {
       "ticker": "TEM",
-      "price": 49.44,
-      "rsi": 50.3,
+      "price": 49.64,
+      "rsi": 50.7,
       "signals": [],
       "fibonacci": [
         {
@@ -93,8 +99,8 @@
     },
     {
       "ticker": "OKLO",
-      "price": 60.26,
-      "rsi": 47.4,
+      "price": 60.16,
+      "rsi": 47.3,
       "signals": [],
       "fibonacci": [
         {
@@ -123,8 +129,8 @@
     },
     {
       "ticker": "SOXL",
-      "price": 279.16,
-      "rsi": 61.5,
+      "price": 282.55,
+      "rsi": 61.9,
       "signals": [
         {
           "type": "MACD",
@@ -159,8 +165,8 @@
     },
     {
       "ticker": "TQQQ",
-      "price": 82.69,
-      "rsi": 56.9,
+      "price": 82.83,
+      "rsi": 57.0,
       "signals": [],
       "fibonacci": [
         {
@@ -189,8 +195,8 @@
     },
     {
       "ticker": "QCOM",
-      "price": 223.04,
-      "rsi": 54.5,
+      "price": 227.37,
+      "rsi": 55.8,
       "signals": [],
       "fibonacci": [
         {
@@ -201,7 +207,7 @@
         {
           "level": 0.236,
           "price": 226.53,
-          "near": false
+          "near": true
         },
         {
           "level": 0.382,
@@ -219,7 +225,7 @@
     },
     {
       "ticker": "BMNR",
-      "price": 15.67,
+      "price": 15.65,
       "rsi": 37.7,
       "signals": [],
       "fibonacci": [
@@ -249,8 +255,8 @@
     },
     {
       "ticker": "PLTR",
-      "price": 128.05,
-      "rsi": 40.9,
+      "price": 127.94,
+      "rsi": 40.8,
       "signals": [],
       "fibonacci": [
         {
@@ -279,12 +285,12 @@
     },
     {
       "ticker": "GOOGL",
-      "price": 366.76,
-      "rsi": 48.3,
+      "price": 366.81,
+      "rsi": 48.4,
       "signals": [
         {
           "type": "MA",
-          "msg": "5일선 $366.57",
+          "msg": "5일선 $366.58",
           "color": "pink"
         }
       ],
@@ -315,9 +321,9 @@
     }
   ],
   "vix": {
-    "vix": 16.77,
+    "vix": 16.85,
     "prev": 18.44,
-    "change": -1.67
+    "change": -1.59
   },
   "fear_greed": {
     "score": 37,
