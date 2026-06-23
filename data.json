@@ -1,40 +1,40 @@
 {
-  "updated_at": "2026-06-22 21:18",
+  "updated_at": "2026-06-23 15:45",
   "tickers": [
     {
       "ticker": "AVGO",
-      "price": 392.13,
-      "rsi": 46.3,
+      "price": 380.04,
+      "rsi": 43.6,
       "signals": [],
       "fibonacci": [
         {
           "level": 0.0,
-          "price": 495.0,
+          "price": 494.22,
           "near": false
         },
         {
           "level": 0.236,
-          "price": 436.01,
+          "price": 435.32,
           "near": false
         },
         {
           "level": 0.382,
-          "price": 399.52,
+          "price": 398.89,
           "near": false
         },
         {
           "level": 0.5,
-          "price": 370.03,
+          "price": 369.44,
           "near": false
         }
       ],
-      "fib_high": 495.0,
-      "fib_low": 245.05
+      "fib_high": 494.22,
+      "fib_low": 244.67
     },
     {
       "ticker": "TSLA",
-      "price": 405.05,
-      "rsi": 48.9,
+      "price": 382.67,
+      "rsi": 41.2,
       "signals": [],
       "fibonacci": [
         {
@@ -63,8 +63,8 @@
     },
     {
       "ticker": "TEM",
-      "price": 47.85,
-      "rsi": 47.3,
+      "price": 49.06,
+      "rsi": 49.6,
       "signals": [],
       "fibonacci": [
         {
@@ -93,9 +93,15 @@
     },
     {
       "ticker": "OKLO",
-      "price": 58.4,
-      "rsi": 45.3,
-      "signals": [],
+      "price": 58.93,
+      "rsi": 46.0,
+      "signals": [
+        {
+          "type": "MA",
+          "msg": "5일선 $58.95",
+          "color": "pink"
+        }
+      ],
       "fibonacci": [
         {
           "level": 0.0,
@@ -123,14 +129,14 @@
     },
     {
       "ticker": "SOXL",
-      "price": 300.77,
-      "rsi": 64.1,
+      "price": 231.6,
+      "rsi": 52.0,
       "signals": [],
       "fibonacci": [
         {
           "level": 0.0,
           "price": 302.0,
-          "near": true
+          "near": false
         },
         {
           "level": 0.236,
@@ -153,8 +159,8 @@
     },
     {
       "ticker": "TQQQ",
-      "price": 82.58,
-      "rsi": 56.6,
+      "price": 75.12,
+      "rsi": 47.8,
       "signals": [],
       "fibonacci": [
         {
@@ -183,8 +189,8 @@
     },
     {
       "ticker": "QCOM",
-      "price": 221.9,
-      "rsi": 53.7,
+      "price": 201.21,
+      "rsi": 46.1,
       "signals": [],
       "fibonacci": [
         {
@@ -213,13 +219,13 @@
     },
     {
       "ticker": "BMNR",
-      "price": 15.86,
-      "rsi": 39.4,
+      "price": 15.14,
+      "rsi": 36.5,
       "signals": [
         {
           "type": "MACD",
-          "msg": "MACD 골든크로스",
-          "color": "green"
+          "msg": "MACD 데드크로스",
+          "color": "red"
         }
       ],
       "fibonacci": [
@@ -249,8 +255,8 @@
     },
     {
       "ticker": "PLTR",
-      "price": 119.5,
-      "rsi": 34.6,
+      "price": 118.57,
+      "rsi": 33.9,
       "signals": [],
       "fibonacci": [
         {
@@ -260,27 +266,27 @@
         },
         {
           "level": 0.236,
-          "price": 186.68,
+          "price": 186.38,
           "near": false
         },
         {
           "level": 0.382,
-          "price": 173.78,
+          "price": 173.3,
           "near": false
         },
         {
           "level": 0.5,
-          "price": 163.36,
+          "price": 162.73,
           "near": false
         }
       ],
       "fib_high": 207.52,
-      "fib_low": 119.2
+      "fib_low": 117.94
     },
     {
       "ticker": "GOOGL",
-      "price": 349.68,
-      "rsi": 39.0,
+      "price": 345.89,
+      "rsi": 37.3,
       "signals": [],
       "fibonacci": [
         {
@@ -291,7 +297,7 @@
         {
           "level": 0.236,
           "price": 350.11,
-          "near": true
+          "near": false
         },
         {
           "level": 0.382,
@@ -309,12 +315,12 @@
     }
   ],
   "vix": {
-    "vix": 17.28,
-    "prev": 16.4,
-    "change": 0.88
+    "vix": 19.74,
+    "prev": 17.28,
+    "change": 2.46
   },
   "fear_greed": {
-    "score": 35,
+    "score": 28,
     "rating": "fear",
     "rating_kr": "공포"
   }
