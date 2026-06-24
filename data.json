@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-24 20:16",
+  "updated_at": "2026-06-24 21:52",
   "tickers": [
     {
       "ticker": "AVGO",
@@ -129,7 +129,7 @@
     },
     {
       "ticker": "SOXL",
-      "price": 229.58,
+      "price": 229.57,
       "rsi": 51.7,
       "signals": [
         {
@@ -225,12 +225,12 @@
     },
     {
       "ticker": "BMNR",
-      "price": 14.01,
+      "price": 14.02,
       "rsi": 32.4,
       "signals": [
         {
           "type": "BB",
-          "msg": "BB하단 $14.00",
+          "msg": "BB하단 $14.01",
           "color": "green"
         }
       ],
@@ -321,9 +321,9 @@
     }
   ],
   "vix": {
-    "vix": 19.35,
+    "vix": 18.63,
     "prev": 19.49,
-    "change": -0.14
+    "change": -0.86
   },
   "fear_greed": {
     "score": 26,
