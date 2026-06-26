@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26 16:09",
+  "updated_at": "2026-06-26 18:09",
   "tickers": [
     {
       "ticker": "AVGO",
@@ -33,12 +33,12 @@
     },
     {
       "ticker": "TSLA",
-      "price": 384.19,
-      "rsi": 43.2,
+      "price": 383.7,
+      "rsi": 43.0,
       "signals": [
         {
           "type": "MA",
-          "msg": "5일선 $384.30",
+          "msg": "5일선 $384.20",
           "color": "pink"
         }
       ],
@@ -69,8 +69,8 @@
     },
     {
       "ticker": "TEM",
-      "price": 56.22,
-      "rsi": 61.3,
+      "price": 56.0,
+      "rsi": 61.0,
       "signals": [],
       "fibonacci": [
         {
@@ -99,8 +99,8 @@
     },
     {
       "ticker": "OKLO",
-      "price": 50.6,
-      "rsi": 37.0,
+      "price": 50.83,
+      "rsi": 37.2,
       "signals": [],
       "fibonacci": [
         {
@@ -129,8 +129,8 @@
     },
     {
       "ticker": "SOXL",
-      "price": 218.13,
-      "rsi": 49.6,
+      "price": 218.88,
+      "rsi": 49.7,
       "signals": [],
       "fibonacci": [
         {
@@ -159,7 +159,7 @@
     },
     {
       "ticker": "TQQQ",
-      "price": 73.51,
+      "price": 73.47,
       "rsi": 46.3,
       "signals": [],
       "fibonacci": [
@@ -189,8 +189,8 @@
     },
     {
       "ticker": "QCOM",
-      "price": 199.38,
-      "rsi": 45.8,
+      "price": 197.16,
+      "rsi": 45.0,
       "signals": [],
       "fibonacci": [
         {
@@ -219,8 +219,8 @@
     },
     {
       "ticker": "BMNR",
-      "price": 13.68,
-      "rsi": 32.7,
+      "price": 13.76,
+      "rsi": 33.3,
       "signals": [],
       "fibonacci": [
         {
@@ -249,8 +249,8 @@
     },
     {
       "ticker": "PLTR",
-      "price": 112.95,
-      "rsi": 34.5,
+      "price": 113.67,
+      "rsi": 35.3,
       "signals": [],
       "fibonacci": [
         {
@@ -279,15 +279,9 @@
     },
     {
       "ticker": "GOOGL",
-      "price": 345.61,
-      "rsi": 37.9,
-      "signals": [
-        {
-          "type": "MA",
-          "msg": "5일선 $346.08",
-          "color": "pink"
-        }
-      ],
+      "price": 341.53,
+      "rsi": 35.2,
+      "signals": [],
       "fibonacci": [
         {
           "level": 0.0,
@@ -315,12 +309,12 @@
     }
   ],
   "vix": {
-    "vix": 18.92,
+    "vix": 18.84,
     "prev": 18.89,
-    "change": 0.03
+    "change": -0.05
   },
   "fear_greed": {
-    "score": 26,
+    "score": 25,
     "rating": "fear",
     "rating_kr": "공포"
   }
