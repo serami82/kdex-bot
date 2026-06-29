@@ -1,17 +1,11 @@
 {
-  "updated_at": "2026-06-26 21:46",
+  "updated_at": "2026-06-29 16:36",
   "tickers": [
     {
       "ticker": "AVGO",
-      "price": 365.02,
-      "rsi": 39.9,
-      "signals": [
-        {
-          "type": "MA",
-          "msg": "120일선 $364.42",
-          "color": "pink"
-        }
-      ],
+      "price": 370.31,
+      "rsi": 41.8,
+      "signals": [],
       "fibonacci": [
         {
           "level": 0.0,
@@ -39,9 +33,15 @@
     },
     {
       "ticker": "TSLA",
-      "price": 379.71,
-      "rsi": 41.2,
-      "signals": [],
+      "price": 403.82,
+      "rsi": 51.4,
+      "signals": [
+        {
+          "type": "MA",
+          "msg": "120일선 $403.91",
+          "color": "pink"
+        }
+      ],
       "fibonacci": [
         {
           "level": 0.0,
@@ -69,8 +69,8 @@
     },
     {
       "ticker": "TEM",
-      "price": 56.14,
-      "rsi": 61.2,
+      "price": 57.17,
+      "rsi": 62.6,
       "signals": [],
       "fibonacci": [
         {
@@ -99,8 +99,8 @@
     },
     {
       "ticker": "OKLO",
-      "price": 50.0,
-      "rsi": 36.4,
+      "price": 51.73,
+      "rsi": 39.3,
       "signals": [],
       "fibonacci": [
         {
@@ -129,8 +129,8 @@
     },
     {
       "ticker": "SOXL",
-      "price": 215.6,
-      "rsi": 49.2,
+      "price": 229.66,
+      "rsi": 51.3,
       "signals": [],
       "fibonacci": [
         {
@@ -159,8 +159,8 @@
     },
     {
       "ticker": "TQQQ",
-      "price": 71.83,
-      "rsi": 44.6,
+      "price": 75.88,
+      "rsi": 49.5,
       "signals": [],
       "fibonacci": [
         {
@@ -171,7 +171,7 @@
         {
           "level": 0.236,
           "price": 76.11,
-          "near": false
+          "near": true
         },
         {
           "level": 0.382,
@@ -189,8 +189,8 @@
     },
     {
       "ticker": "QCOM",
-      "price": 189.39,
-      "rsi": 42.6,
+      "price": 189.99,
+      "rsi": 42.8,
       "signals": [],
       "fibonacci": [
         {
@@ -219,8 +219,8 @@
     },
     {
       "ticker": "BMNR",
-      "price": 13.56,
-      "rsi": 31.9,
+      "price": 13.3,
+      "rsi": 31.0,
       "signals": [],
       "fibonacci": [
         {
@@ -230,27 +230,27 @@
         },
         {
           "level": 0.236,
-          "price": 123.93,
+          "price": 125.89,
           "near": false
         },
         {
           "level": 0.382,
-          "price": 101.02,
+          "price": 104.2,
           "near": false
         },
         {
           "level": 0.5,
-          "price": 82.51,
+          "price": 86.66,
           "near": false
         }
       ],
       "fib_high": 160.95,
-      "fib_low": 4.07
+      "fib_low": 12.38
     },
     {
       "ticker": "PLTR",
-      "price": 112.93,
-      "rsi": 34.5,
+      "price": 115.71,
+      "rsi": 37.8,
       "signals": [],
       "fibonacci": [
         {
@@ -279,20 +279,9 @@
     },
     {
       "ticker": "GOOGL",
-      "price": 337.39,
-      "rsi": 33.3,
-      "signals": [
-        {
-          "type": "BB",
-          "msg": "BB하단 $338.16",
-          "color": "green"
-        },
-        {
-          "type": "MA",
-          "msg": "120일선 $336.90",
-          "color": "pink"
-        }
-      ],
+      "price": 351.88,
+      "rsi": 44.5,
+      "signals": [],
       "fibonacci": [
         {
           "level": 0.0,
@@ -301,32 +290,32 @@
         },
         {
           "level": 0.236,
-          "price": 352.4,
-          "near": false
+          "price": 352.65,
+          "near": true
         },
         {
           "level": 0.382,
-          "price": 317.78,
+          "price": 318.18,
           "near": false
         },
         {
           "level": 0.5,
-          "price": 289.8,
+          "price": 290.32,
           "near": false
         }
       ],
       "fib_high": 408.37,
-      "fib_low": 171.24
+      "fib_low": 172.28
     }
   ],
   "vix": {
-    "vix": 18.41,
-    "prev": 18.89,
-    "change": -0.48
+    "vix": 17.84,
+    "prev": 18.41,
+    "change": -0.57
   },
   "fear_greed": {
-    "score": 25,
-    "rating": "extreme fear",
-    "rating_kr": "극단적 공포"
+    "score": 27,
+    "rating": "fear",
+    "rating_kr": "공포"
   }
 }
