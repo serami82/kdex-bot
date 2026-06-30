@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-30 20:26",
+  "updated_at": "2026-06-30 21:54",
   "tickers": [
     {
       "ticker": "AVGO",
@@ -135,7 +135,7 @@
     },
     {
       "ticker": "SOXL",
-      "price": 266.81,
+      "price": 266.71,
       "rsi": 56.3,
       "signals": [],
       "fibonacci": [
@@ -321,9 +321,9 @@
     }
   ],
   "vix": {
-    "vix": 16.5,
+    "vix": 16.45,
     "prev": 17.65,
-    "change": -1.15
+    "change": -1.2
   },
   "fear_greed": {
     "score": 31,
