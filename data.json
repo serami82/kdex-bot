@@ -1,17 +1,11 @@
 {
-  "updated_at": "2026-07-02 15:11",
+  "updated_at": "2026-07-02 16:00",
   "tickers": [
     {
       "ticker": "AVGO",
-      "price": 365.95,
-      "rsi": 41.2,
-      "signals": [
-        {
-          "type": "MA",
-          "msg": "120일선 $365.48",
-          "color": "pink"
-        }
-      ],
+      "price": 363.67,
+      "rsi": 40.5,
+      "signals": [],
       "fibonacci": [
         {
           "level": 0.0,
@@ -39,9 +33,15 @@
     },
     {
       "ticker": "TSLA",
-      "price": 396.67,
-      "rsi": 47.7,
-      "signals": [],
+      "price": 397.79,
+      "rsi": 48.1,
+      "signals": [
+        {
+          "type": "BB",
+          "msg": "BB중심 $399.37",
+          "color": "yellow"
+        }
+      ],
       "fibonacci": [
         {
           "level": 0.0,
@@ -69,8 +69,8 @@
     },
     {
       "ticker": "TEM",
-      "price": 59.8,
-      "rsi": 63.6,
+      "price": 60.45,
+      "rsi": 65.1,
       "signals": [],
       "fibonacci": [
         {
@@ -99,8 +99,8 @@
     },
     {
       "ticker": "OKLO",
-      "price": 52.44,
-      "rsi": 40.7,
+      "price": 52.27,
+      "rsi": 40.5,
       "signals": [],
       "fibonacci": [
         {
@@ -129,8 +129,8 @@
     },
     {
       "ticker": "SOXL",
-      "price": 193.66,
-      "rsi": 45.9,
+      "price": 187.8,
+      "rsi": 45.2,
       "signals": [],
       "fibonacci": [
         {
@@ -159,8 +159,8 @@
     },
     {
       "ticker": "TQQQ",
-      "price": 74.8,
-      "rsi": 47.9,
+      "price": 74.12,
+      "rsi": 47.2,
       "signals": [],
       "fibonacci": [
         {
@@ -189,8 +189,8 @@
     },
     {
       "ticker": "QCOM",
-      "price": 175.96,
-      "rsi": 38.1,
+      "price": 174.76,
+      "rsi": 37.7,
       "signals": [],
       "fibonacci": [
         {
@@ -219,8 +219,8 @@
     },
     {
       "ticker": "BMNR",
-      "price": 14.52,
-      "rsi": 40.7,
+      "price": 14.51,
+      "rsi": 40.6,
       "signals": [
         {
           "type": "MACD",
@@ -255,8 +255,8 @@
     },
     {
       "ticker": "PLTR",
-      "price": 129.15,
-      "rsi": 51.4,
+      "price": 128.91,
+      "rsi": 51.2,
       "signals": [
         {
           "type": "MACD",
@@ -291,19 +291,9 @@
     },
     {
       "ticker": "GOOGL",
-      "price": 358.19,
-      "rsi": 48.5,
+      "price": 355.91,
+      "rsi": 47.1,
       "signals": [
-        {
-          "type": "BB",
-          "msg": "BB중심 $358.44",
-          "color": "yellow"
-        },
-        {
-          "type": "MA",
-          "msg": "20일선 $358.44",
-          "color": "pink"
-        },
         {
           "type": "MACD",
           "msg": "MACD 골든크로스",
@@ -337,12 +327,12 @@
     }
   ],
   "vix": {
-    "vix": 16.26,
+    "vix": 16.58,
     "prev": 16.59,
-    "change": -0.33
+    "change": -0.01
   },
   "fear_greed": {
-    "score": 33,
+    "score": 32,
     "rating": "fear",
     "rating_kr": "공포"
   }
