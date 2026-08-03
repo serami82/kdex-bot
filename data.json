@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-03 20:07",
+  "updated_at": "2026-08-03 21:37",
   "tickers": [
     {
       "ticker": "AVGO",
@@ -93,8 +93,8 @@
     },
     {
       "ticker": "OKLO",
-      "price": 41.24,
-      "rsi": 41.9,
+      "price": 41.22,
+      "rsi": 41.8,
       "signals": [],
       "fibonacci": [
         {
@@ -123,8 +123,8 @@
     },
     {
       "ticker": "SOXL",
-      "price": 116.63,
-      "rsi": 40.1,
+      "price": 116.71,
+      "rsi": 40.2,
       "signals": [],
       "fibonacci": [
         {
@@ -213,7 +213,7 @@
     },
     {
       "ticker": "BMNR",
-      "price": 17.41,
+      "price": 17.42,
       "rsi": 54.5,
       "signals": [
         {
@@ -309,9 +309,9 @@
     }
   ],
   "vix": {
-    "vix": 15.7,
+    "vix": 15.86,
     "prev": 15.99,
-    "change": -0.29
+    "change": -0.13
   },
   "fear_greed": {
     "score": 46,
