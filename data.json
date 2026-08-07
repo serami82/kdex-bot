@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-08-07 17:41",
+  "updated_at": "2026-08-07 18:42",
   "tickers": [
     {
       "ticker": "AVGO",
-      "price": 424.69,
+      "price": 424.71,
       "rsi": 63.9,
       "signals": [
         {
           "type": "BB",
-          "msg": "BB상단 $423.74",
+          "msg": "BB상단 $423.75",
           "color": "red"
         }
       ],
@@ -39,8 +39,8 @@
     },
     {
       "ticker": "TSLA",
-      "price": 327.34,
-      "rsi": 40.8,
+      "price": 326.8,
+      "rsi": 40.6,
       "signals": [
         {
           "type": "MACD",
@@ -75,15 +75,9 @@
     },
     {
       "ticker": "TEM",
-      "price": 50.58,
-      "rsi": 53.7,
-      "signals": [
-        {
-          "type": "MA",
-          "msg": "120일선 $50.66",
-          "color": "pink"
-        }
-      ],
+      "price": 51.31,
+      "rsi": 55.0,
+      "signals": [],
       "fibonacci": [
         {
           "level": 0.0,
@@ -111,15 +105,9 @@
     },
     {
       "ticker": "OKLO",
-      "price": 48.09,
-      "rsi": 54.9,
-      "signals": [
-        {
-          "type": "BB",
-          "msg": "BB상단 $47.89",
-          "color": "red"
-        }
-      ],
+      "price": 48.28,
+      "rsi": 55.2,
+      "signals": [],
       "fibonacci": [
         {
           "level": 0.0,
@@ -147,9 +135,20 @@
     },
     {
       "ticker": "SOXL",
-      "price": 139.0,
-      "rsi": 46.7,
-      "signals": [],
+      "price": 137.75,
+      "rsi": 46.4,
+      "signals": [
+        {
+          "type": "BB",
+          "msg": "BB중심 $137.70",
+          "color": "yellow"
+        },
+        {
+          "type": "MA",
+          "msg": "20일선 $137.70",
+          "color": "pink"
+        }
+      ],
       "fibonacci": [
         {
           "level": 0.0,
@@ -177,8 +176,8 @@
     },
     {
       "ticker": "TQQQ",
-      "price": 73.84,
-      "rsi": 54.9,
+      "price": 73.48,
+      "rsi": 54.5,
       "signals": [],
       "fibonacci": [
         {
@@ -207,9 +206,20 @@
     },
     {
       "ticker": "QCOM",
-      "price": 167.49,
-      "rsi": 47.3,
-      "signals": [],
+      "price": 166.62,
+      "rsi": 46.7,
+      "signals": [
+        {
+          "type": "BB",
+          "msg": "BB중심 $166.33",
+          "color": "yellow"
+        },
+        {
+          "type": "MA",
+          "msg": "20일선 $166.33",
+          "color": "pink"
+        }
+      ],
       "fibonacci": [
         {
           "level": 0.0,
@@ -237,8 +247,8 @@
     },
     {
       "ticker": "BMNR",
-      "price": 18.42,
-      "rsi": 58.6,
+      "price": 18.47,
+      "rsi": 58.8,
       "signals": [],
       "fibonacci": [
         {
@@ -267,12 +277,12 @@
     },
     {
       "ticker": "PLTR",
-      "price": 171.38,
-      "rsi": 72.6,
+      "price": 170.04,
+      "rsi": 72.2,
       "signals": [
         {
           "type": "RSI",
-          "msg": "RSI 72.6 과매수",
+          "msg": "RSI 72.2 과매수",
           "color": "red"
         }
       ],
@@ -303,8 +313,8 @@
     },
     {
       "ticker": "GOOGL",
-      "price": 354.71,
-      "rsi": 50.9,
+      "price": 354.13,
+      "rsi": 50.7,
       "signals": [],
       "fibonacci": [
         {
@@ -333,9 +343,9 @@
     }
   ],
   "vix": {
-    "vix": 15.01,
+    "vix": 14.92,
     "prev": 15.15,
-    "change": -0.14
+    "change": -0.23
   },
   "fear_greed": {
     "score": 63,
