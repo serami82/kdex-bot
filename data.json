@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-01 20:20",
+  "updated_at": "2026-09-01 22:42",
   "tickers": [
     {
       "ticker": "AVGO",
@@ -190,7 +190,7 @@
     {
       "ticker": "QCOM",
       "price": 166.61,
-      "rsi": 51.0,
+      "rsi": 50.9,
       "signals": [],
       "fibonacci": [
         {
@@ -315,9 +315,9 @@
     }
   ],
   "vix": {
-    "vix": 16.42,
+    "vix": 16.34,
     "prev": 14.92,
-    "change": 1.5
+    "change": 1.42
   },
   "fear_greed": {
     "score": 45,
