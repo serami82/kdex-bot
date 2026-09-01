@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-01 17:30",
+  "updated_at": "2026-09-01 20:20",
   "tickers": [
     {
       "ticker": "AVGO",
-      "price": 369.48,
-      "rsi": 43.2,
+      "price": 369.68,
+      "rsi": 43.3,
       "signals": [],
       "fibonacci": [
         {
@@ -33,8 +33,8 @@
     },
     {
       "ticker": "TSLA",
-      "price": 357.5,
-      "rsi": 53.7,
+      "price": 356.09,
+      "rsi": 53.1,
       "signals": [],
       "fibonacci": [
         {
@@ -63,8 +63,8 @@
     },
     {
       "ticker": "TEM",
-      "price": 62.34,
-      "rsi": 54.9,
+      "price": 62.27,
+      "rsi": 54.8,
       "signals": [],
       "fibonacci": [
         {
@@ -93,7 +93,7 @@
     },
     {
       "ticker": "OKLO",
-      "price": 38.58,
+      "price": 38.53,
       "rsi": 41.4,
       "signals": [],
       "fibonacci": [
@@ -123,8 +123,8 @@
     },
     {
       "ticker": "SOXL",
-      "price": 105.4,
-      "rsi": 38.7,
+      "price": 105.91,
+      "rsi": 38.8,
       "signals": [
         {
           "type": "MACD",
@@ -159,8 +159,8 @@
     },
     {
       "ticker": "TQQQ",
-      "price": 69.36,
-      "rsi": 45.3,
+      "price": 69.15,
+      "rsi": 44.9,
       "signals": [],
       "fibonacci": [
         {
@@ -189,8 +189,8 @@
     },
     {
       "ticker": "QCOM",
-      "price": 166.3,
-      "rsi": 50.6,
+      "price": 166.61,
+      "rsi": 51.0,
       "signals": [],
       "fibonacci": [
         {
@@ -219,8 +219,8 @@
     },
     {
       "ticker": "BMNR",
-      "price": 23.55,
-      "rsi": 61.3,
+      "price": 23.37,
+      "rsi": 60.4,
       "signals": [],
       "fibonacci": [
         {
@@ -249,8 +249,8 @@
     },
     {
       "ticker": "PLTR",
-      "price": 182.58,
-      "rsi": 64.8,
+      "price": 179.92,
+      "rsi": 61.9,
       "signals": [
         {
           "type": "MACD",
@@ -285,8 +285,8 @@
     },
     {
       "ticker": "GOOGL",
-      "price": 335.22,
-      "rsi": 41.4,
+      "price": 335.02,
+      "rsi": 41.3,
       "signals": [],
       "fibonacci": [
         {
@@ -315,9 +315,9 @@
     }
   ],
   "vix": {
-    "vix": 15.98,
+    "vix": 16.42,
     "prev": 14.92,
-    "change": 1.06
+    "change": 1.5
   },
   "fear_greed": {
     "score": 45,
