@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02 20:20",
+  "updated_at": "2026-09-02 22:44",
   "tickers": [
     {
       "ticker": "AVGO",
@@ -196,11 +196,11 @@
     {
       "ticker": "QCOM",
       "price": 169.96,
-      "rsi": 54.4,
+      "rsi": 54.6,
       "signals": [
         {
           "type": "BB",
-          "msg": "BB상단 $170.13",
+          "msg": "BB상단 $169.96",
           "color": "red"
         }
       ],
@@ -321,9 +321,9 @@
     }
   ],
   "vix": {
-    "vix": 15.23,
+    "vix": 15.2,
     "prev": 16.34,
-    "change": -1.11
+    "change": -1.14
   },
   "fear_greed": {
     "score": 33,
