@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10 16:51",
+  "updated_at": "2026-09-10 17:24",
   "tickers": [
     {
       "ticker": "AVGO",
@@ -39,12 +39,12 @@
     },
     {
       "ticker": "TSLA",
-      "price": 365.95,
-      "rsi": 54.8,
+      "price": 366.33,
+      "rsi": 54.9,
       "signals": [
         {
           "type": "MA",
-          "msg": "5일선 $366.47",
+          "msg": "5일선 $366.55",
           "color": "pink"
         }
       ],
@@ -75,8 +75,8 @@
     },
     {
       "ticker": "TEM",
-      "price": 58.88,
-      "rsi": 48.1,
+      "price": 59.12,
+      "rsi": 48.4,
       "signals": [],
       "fibonacci": [
         {
@@ -105,8 +105,8 @@
     },
     {
       "ticker": "OKLO",
-      "price": 40.58,
-      "rsi": 46.0,
+      "price": 40.45,
+      "rsi": 45.8,
       "signals": [],
       "fibonacci": [
         {
@@ -135,7 +135,7 @@
     },
     {
       "ticker": "SOXL",
-      "price": 117.5,
+      "price": 117.59,
       "rsi": 45.8,
       "signals": [],
       "fibonacci": [
@@ -165,7 +165,7 @@
     },
     {
       "ticker": "TQQQ",
-      "price": 69.78,
+      "price": 69.75,
       "rsi": 45.8,
       "signals": [
         {
@@ -201,8 +201,8 @@
     },
     {
       "ticker": "QCOM",
-      "price": 181.6,
-      "rsi": 66.8,
+      "price": 179.75,
+      "rsi": 65.3,
       "signals": [],
       "fibonacci": [
         {
@@ -231,8 +231,8 @@
     },
     {
       "ticker": "BMNR",
-      "price": 24.1,
-      "rsi": 57.9,
+      "price": 24.24,
+      "rsi": 58.5,
       "signals": [],
       "fibonacci": [
         {
@@ -261,8 +261,8 @@
     },
     {
       "ticker": "PLTR",
-      "price": 166.72,
-      "rsi": 48.7,
+      "price": 166.26,
+      "rsi": 48.4,
       "signals": [],
       "fibonacci": [
         {
@@ -291,12 +291,12 @@
     },
     {
       "ticker": "GOOGL",
-      "price": 331.48,
-      "rsi": 40.3,
+      "price": 331.95,
+      "rsi": 40.8,
       "signals": [
         {
           "type": "BB",
-          "msg": "BB하단 $331.52",
+          "msg": "BB하단 $331.63",
           "color": "green"
         }
       ],
@@ -327,12 +327,12 @@
     }
   ],
   "vix": {
-    "vix": 17.72,
+    "vix": 17.32,
     "prev": 16.46,
-    "change": 1.26
+    "change": 0.86
   },
   "fear_greed": {
-    "score": 35,
+    "score": 36,
     "rating": "fear",
     "rating_kr": "공포"
   }
